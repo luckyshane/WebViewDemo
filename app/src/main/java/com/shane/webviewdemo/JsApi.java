@@ -16,7 +16,6 @@ public class JsApi{
     @JavascriptInterface
     public String testSyn(Object msg)  {
         // 这些接口，如果是在4.2之下的版本则是在主线程执行，如果是4.2之上的版本则是在子线程执行。区别是，这个是由WebView原生注入则在子线程调用，如果是拦截js的prompt则是在主线程执行。
-
         return msg + "［syn call］" + Util.checkThread();
     }
 

@@ -14,7 +14,7 @@ public class JsEchoApi {
 
     @JavascriptInterface
     public Object syn(Object args) throws JSONException {
-        return  Util.checkThread() + " " + args;
+        return  Util.checkThread() + " " + args.getClass().getSimpleName();
     }
 
     @JavascriptInterface
