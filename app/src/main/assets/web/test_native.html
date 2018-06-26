@@ -16,29 +16,29 @@
     
     <body>
         <div style = "margin-top: 100px">
-            <h1 style = "color: red;">Native, H5 交互</h1><br/>
+            <h1 style = "color: red;">JS调用Java</h1><br/>
         </div><br/>
         
         <!--      JS 调用 Native 方式一     -->
         <div>
-            <button type="button" onclick="firstClick()">调用url scheme</button>
+            <button type="button" onclick="callUrl()">通过url拦截调用Android代码</button>
         </div><br/>
         
         <!--      JS 调用 Native 方式二     -->
         <div>
-            <input type = "button" value = "点击触发 JS 方法(callJsAlert)" onclick = "callJsAlert()">
+            <input type = "button" value = "通过Alert拦截调用Android代码" onclick = "callJsAlert()">
         </div><br/>
         
         <div>
-            <input type = "button" value = "点击触发 JS 方法(callJsConfirm)" onclick = "callJsConfirm()">
+            <input type = "button" value = "通过Confirm拦截调用Android代码" onclick = "callJsConfirm()">
         </div><br/>
         
         <div>
-            <input type = "button" value = "点击触发 JS 方法(callJsInput)" onclick = "callJsInput()">
+            <input type = "button" value = "通过Prompt拦截调用Android代码" onclick = "callJsInput()">
         </div><br/>
 
         <div>
-            <input type = "button" value = "点击触发 JS 方法(callConsoleLog)" onclick = "callConsoleLog()">
+            <input type = "button" value = "通过Console.log拦截调用Android代码" onclick = "callConsoleLog()">
         </div><br/>
 
         <div>Click me here: <a href = "http://www.pottermore.com">Jump to Harry Port</a></div><br/>
@@ -49,7 +49,7 @@
         
         <!--      JS 调用 Native 方式三     -->
         <div>
-            <input type = "button" value = "点击触发 JS 方法(messageHandlers)" onclick = "messageHandlers()">
+            <input type = "button" value = "调用Android JavascriptInterface接口" onclick = "messageHandlers()">
         </div><br/>
         
         <script type = "text/javascript">
@@ -69,15 +69,12 @@
                 iFrame = null;
             }
             
-            function firstClick() {
+            function callUrl() {
                 loadURL("cmiotjs://shareClick?title=测试分享的标题&content=测试分享的内容&url=http://www.baidu.com");
-                //document.location = "cmiotjs://shareClick?title=测试分享的标题&content=测试分享的内容&url=http://www.baidu.com";
-                //alert("first click")
-                //document.location = "cmiotjs://webview?arg1=111&arg2=222";
             }
         
             function callJsAlert() {
-                alert('这个是 Swift 调用 JS 的方法, 并且通过 Alert() 显示出来!');
+                alert('这是JS的Alert内容');
             }
         
             function callJsConfirm() {

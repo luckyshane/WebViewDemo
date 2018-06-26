@@ -39,7 +39,7 @@ public class WebViewNativeDemoActivity extends Activity {
         initView();
     }
 
-    @SuppressLint("SetJavaScriptEnabled")
+    @SuppressLint({"SetJavaScriptEnabled", "AddJavascriptInterface"})
     private void initView() {
         webView = findViewById(R.id.web_view);
         webView.getSettings().setJavaScriptEnabled(true);
@@ -84,7 +84,7 @@ public class WebViewNativeDemoActivity extends Activity {
             Uri uri = Uri.parse(url);
             if (SCHEME.equals(uri.getScheme())) {
                 new AlertDialog.Builder(WebViewNativeDemoActivity.this)
-                        .setTitle(checkThread() + " " + uri.getAuthority())
+                        .setTitle("Android Url拦截 " + checkThread() + " " + uri.getAuthority())
                         .setMessage(uri.getQuery())
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
@@ -102,7 +102,7 @@ public class WebViewNativeDemoActivity extends Activity {
         @Override
         public boolean onJsAlert(WebView view, String url, String message, final JsResult result) {
             new AlertDialog.Builder(WebViewNativeDemoActivity.this)
-                    .setTitle(checkThread() + " Android Alert拦截")
+                    .setTitle("Android Alert拦截 " + checkThread())
                     .setMessage(message)
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
@@ -117,7 +117,7 @@ public class WebViewNativeDemoActivity extends Activity {
         @Override
         public boolean onJsConfirm(WebView view, String url, String message, final JsResult result) {
             new AlertDialog.Builder(WebViewNativeDemoActivity.this)
-                    .setTitle(checkThread() + " Android Confirm拦截")
+                    .setTitle("Android Confirm拦截 " + checkThread())
                     .setMessage(message)
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
@@ -139,7 +139,7 @@ public class WebViewNativeDemoActivity extends Activity {
         @Override
         public boolean onJsPrompt(WebView view, String url, String message, String defaultValue, final JsPromptResult result) {
             new AlertDialog.Builder(WebViewNativeDemoActivity.this)
-                    .setTitle(checkThread() + " Android Prompt拦截")
+                    .setTitle("Android Prompt拦截 " + checkThread())
                     .setMessage(message + " Shane")
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
@@ -163,7 +163,7 @@ public class WebViewNativeDemoActivity extends Activity {
         public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
             String message = consoleMessage.message();
             new AlertDialog.Builder(WebViewNativeDemoActivity.this)
-                    .setTitle(checkThread() + " Android Console拦截")
+                    .setTitle("Android Console拦截 " + checkThread())
                     .setMessage(message)
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
@@ -200,7 +200,7 @@ public class WebViewNativeDemoActivity extends Activity {
         @JavascriptInterface
         public void call(String message) {
             new AlertDialog.Builder(WebViewNativeDemoActivity.this)
-                    .setTitle(checkThread() + " Android JsApi")
+                    .setTitle("Android JsApi " + checkThread())
                     .setMessage(message)
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
