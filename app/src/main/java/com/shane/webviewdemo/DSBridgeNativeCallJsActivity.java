@@ -76,7 +76,7 @@ public class DSBridgeNativeCallJsActivity extends Activity implements View.OnCli
                 dWebView.callHandler("startTimer", new OnReturnValue<Integer>() {
                     @Override
                     public void onValue(Integer retValue) {
-                        showToast(retValue);
+                        showToast(retValue + " " + Util.checkThread());
                     }
                 });
                 break;
@@ -84,7 +84,7 @@ public class DSBridgeNativeCallJsActivity extends Activity implements View.OnCli
                 dWebView.callHandler("syn.addValue", new Object[]{5, 6}, new OnReturnValue<Integer>() {
                     @Override
                     public void onValue(Integer retValue) {
-                        showToast(retValue);
+                        showToast(retValue + " " + Util.checkThread());
                     }
                 });
                 break;
@@ -92,7 +92,7 @@ public class DSBridgeNativeCallJsActivity extends Activity implements View.OnCli
                 dWebView.callHandler("syn.getInfo", new OnReturnValue<JSONObject>() {
                     @Override
                     public void onValue(JSONObject retValue) {
-                        showToast(retValue);
+                        showToast(retValue + " " + Util.checkThread());
                     }
                 });
                 break;
@@ -100,7 +100,7 @@ public class DSBridgeNativeCallJsActivity extends Activity implements View.OnCli
                 dWebView.callHandler("asyn.addValue", new Object[]{5, 6}, new OnReturnValue<Integer>() {
                     @Override
                     public void onValue(Integer retValue) {
-                        showToast(retValue);
+                        showToast(retValue + " " + Util.checkThread());
                     }
                 });
                 break;
@@ -108,7 +108,7 @@ public class DSBridgeNativeCallJsActivity extends Activity implements View.OnCli
                 dWebView.callHandler("asyn.getInfo", new OnReturnValue<JSONObject>() {
                     @Override
                     public void onValue(JSONObject retValue) {
-                        showToast(retValue);
+                        showToast(retValue + " " + Util.checkThread());
                     }
                 });
                 break;
@@ -124,7 +124,7 @@ public class DSBridgeNativeCallJsActivity extends Activity implements View.OnCli
                 dWebView.hasJavascriptMethod("XX", new OnReturnValue<Boolean>() {
                     @Override
                     public void onValue(Boolean retValue) {
-                        showToast(retValue);
+                        showToast(retValue + " " + Util.checkThread());
                     }
                 });
                 break;
@@ -132,7 +132,7 @@ public class DSBridgeNativeCallJsActivity extends Activity implements View.OnCli
                 dWebView.hasJavascriptMethod("asyn.addValue", new OnReturnValue<Boolean>() {
                     @Override
                     public void onValue(Boolean retValue) {
-                        showToast(retValue);
+                        showToast(retValue + " " + Util.checkThread());
                     }
                 });
                 break;
